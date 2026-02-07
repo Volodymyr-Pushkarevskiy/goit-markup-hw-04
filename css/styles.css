@@ -146,8 +146,17 @@ img {
 
 .hero-section {
     background-color: #2E2F42;
+    background-image: linear-gradient( to bottom, 
+        rgba(46, 47, 66, 0.7), 
+        rgba(46, 47, 66, 0.7)),
+        url(../images/people-office.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     padding: 188px 0px;
 }
+
+
 
 .hero-title {
     font-weight: 700;
@@ -213,6 +222,20 @@ gap: 24px;
 .features-list-item {
     width: calc((100% -72px)/4);
 
+}
+
+.features-icon {
+    background-color: #F4F4FD;
+    border: 1px solid #8E8F99;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.features-icon svg {
+    display: block;
+    margin: 24px auto;
+    width: 64px;
+    height: 64px;
 }
 
 .features-list-item-title {
@@ -292,6 +315,35 @@ background-color: #F4F4FD;
     line-height: 1.5;
     text-align: center;
     letter-spacing: 0.02em;
+}
+
+/* .social-icon-container {
+    ma
+} */
+.social-icon-list {
+    display: flex;
+    gap: 24px; 
+}
+
+.social-icon-link {
+    width: 40px;
+    height: 40px;
+    background-color: #4D5AE5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-icon-link:hover,
+.social-icon-link:focus {
+    background-color: #404BBF;
+}
+
+.social-icon-link svg {
+    width: 16px;
+    height: 16px;
+    fill: #F4F4FD;
 }
 
 /* #endregion team section */
