@@ -81,9 +81,6 @@ img {
 .page-logo-header-web {
     color: #4D5AE5;
 }
-.page-nav {
-/* margin-right: 336px; */
-}
 
 .nav-list {
     display: flex;
@@ -100,16 +97,35 @@ img {
     color: #2E2F42;
     line-height: 1.5;
     letter-spacing: 0.02em;
+    position: relative;
 }
 
 .nav-list-item-link {
     display: block;
     padding: 24px 0px;
+    transition: color 250ms ease-in-out;
 }
 
 .nav-list-item-link:hover,
 .nav-list-item-link:focus {
     color: #404BBF;
+}
+
+.nav-list-link-active{
+    color: #404BBF;
+}
+
+.nav-list-link-active::after {
+    position: absolute;
+    bottom: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #404BBF;
+    border-radius: 2px;
+
+
 }
 
 .page-address {
@@ -122,9 +138,6 @@ img {
     gap: 40px;
 }
 
-.address-list-item {
-
-}
 
 .address-list-link {
     font-weight: 400;
@@ -132,6 +145,7 @@ img {
     line-height: 1.5;
     letter-spacing: 0.02em;
     display: block;
+    transition: color 250ms ease-in-out;
 }
 
 .address-list-link:hover,
@@ -184,6 +198,7 @@ img {
     margin: 0 auto;
     display: block;
     border: none;
+    transition: background-color 250ms ease-in-out;
 
 }
 
@@ -195,10 +210,6 @@ img {
 /* #endregion hero section */
 
 /* #region about section */
-
-.features {
-
-}
 
 .features-title {
 
@@ -285,11 +296,9 @@ background-color: #F4F4FD;
     flex-direction: column; 
     border-radius: 0 0 4px 4px;
     width: 264px;
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
 
-.team-list-card img {
-
-}
 
 .team-title-text-container {
     display: flex;
@@ -317,9 +326,6 @@ background-color: #F4F4FD;
     letter-spacing: 0.02em;
 }
 
-/* .social-icon-container {
-    ma
-} */
 .social-icon-list {
     display: flex;
     gap: 24px; 
@@ -333,6 +339,7 @@ background-color: #F4F4FD;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition:background-color 250ms ease-in-out;
 }
 
 .social-icon-link:hover,
@@ -340,18 +347,9 @@ background-color: #F4F4FD;
     background-color: #404BBF;
 }
 
-.social-icon-link svg {
-    width: 16px;
-    height: 16px;
-    fill: #F4F4FD;
-}
-
 /* #endregion team section */
 
 /* #region portfolio section */
-.portfolio-section {
-
-}
 
 .portfolio-title {
     font-weight: 700;
@@ -371,10 +369,44 @@ background-color: #F4F4FD;
 
 .portfolio-list-card {
     display: flex;
-    flex-direction: column
+    flex-direction: column;  
 }
-.portfolio-list-card img {
-    /* margin-bottom:32px; */
+
+.portfolio-card-img-container {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.portfolio-card-overlay {
+    display: flex;
+    padding: 40px 32px;
+    font-weight: 400;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #4D5AE5;
+    color: #F4F4FD;
+    transform:translateY(100%);
+    transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
+}
+
+
+
+.portfolio-list-card:hover,
+.portfolio-list-card:focus {
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+
+.portfolio-list-card:hover .portfolio-card-overlay,
+.portfolio-list-card:focus .portfolio-card-overlay {
+    transform: translateY(0);
 }
 
 .portfolio-card-text-container {
@@ -415,6 +447,11 @@ background-color: #F4F4FD;
 
 .footer-section-container {
     display: flex;
+    gap: 120px;
+}
+
+.footer-logo-container {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
@@ -436,12 +473,48 @@ background-color: #F4F4FD;
     color: #4D5AE5;
 }
 
-.footer-text {
+.footer-logo-text {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
     color: #F4F4FD;
     letter-spacing: 0.02em;
     width: 264px;
+}
+
+.footer-social-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.footer-social-text {
+    font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        color: #FFFFFF;
+}
+
+.footer-social-icon-list {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-social-icon-link {
+    width: 40px;
+    height: 40px;
+    background-color: #4D5AE5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 250ms ease-in-out;
+}
+
+.footer-social-icon-link:hover,
+.footer-social-icon-link:focus {
+    background-color: #31D0AA;
 }
 /* #endregion footer section */
